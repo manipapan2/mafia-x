@@ -1,0 +1,319 @@
+/* ==================nav================== */
+nav{
+  position: absolute;
+  /* position: static; */
+  top: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  width: 100%;
+  height: 70px;
+  /* background-color: red; */
+  justify-content: flex-end;
+  align-items: center;
+  user-select: none;
+}
+
+nav div{
+  display: flex;
+  width: 35%;
+  height: 100%;
+  justify-content: space-around;
+  align-items: center;
+  /* background-color: green; */
+}
+
+nav a{
+    position: relative;
+    color: rgb(252, 9, 9);
+    font-weight: bold;
+}
+
+nav a::after{
+  content: "";
+  position: absolute;
+  width: 0%;
+  border-bottom: 3px solid white;
+  height: 5px;
+  bottom: -5px;
+  /* top: -5px; */
+  transition: 0.5s;
+  direction: ltr;
+  right: 0;
+  /* transform: rotate(180deg); */
+}
+
+nav a:hover::after{
+  width: 100%;
+}
+
+nav a::before{
+  content: "";
+  position: absolute;
+  width: 0%;
+  border-bottom: 3px solid white;
+  height: 5px;
+  bottom: -5px;
+  transition: 0.5s;
+  direction: ltr;
+  left: 0;
+}
+
+nav a:hover::before{
+  width: 100%;
+}
+
+nav a:hover{
+    /* color: #000000; */
+    color: white;
+}
+
+/* ================chatbox================ */
+.chatbox{
+  position: relative;
+  display: flex;
+  width: 320px;
+  height: 90%;
+  background-color: #242424;
+  margin: auto;
+  border-radius: 15px;
+}
+
+.stickers{
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  width: 100%;
+  height: 100px;
+  background-color: #111111;
+  bottom: 0;
+  border-radius: 0 0 15px 15px;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.row1Sticker{
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+  
+}
+
+.row1Sticker div{
+  position: relative;
+  display: flex;
+  height: 60%;
+  aspect-ratio: 1/1;
+  /* background-color: blue; */
+  background-color: transparent;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 100ms;
+  font-size: 32px;
+  user-select: none;
+}
+
+
+.row1Sticker div:hover{
+  transform: scale(1.2);
+}
+
+.row1Sticker div:active{
+  transform: scale(0.8);
+}
+
+.inputSticker{
+  position: absolute;
+  display: flex;
+  width: 100%;
+  height: 40px;
+  bottom: 100px;
+  background-color: #111111;
+  border-style: none;
+  margin: 0;
+  padding: 20px;
+  box-sizing: border-box;
+  outline: 1px solid white;
+  z-index: 1;
+}
+
+.massage{
+    display: flex;
+    width: 100%;
+    height: 20px;
+    margin: 20px;
+    justify-content: center;
+    font-weight: bold;
+}
+
+/* ==============tozhiCard=============== */
+.tozihCard{
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  /* height: 150px; */
+  height: 235px;
+  line-height: 1.6;
+  background-color: rgb(146, 0, 37);
+  align-self: center;
+  justify-self: center;
+  border-radius: 10px;
+  transition: 600ms;
+  transform: rotateY(90deg);
+}
+
+.tozihCard:hover{
+  scale: 1.2;
+}
+
+.nonestyle{
+  transform: rotate(0deg);
+  transform: translateX(0px);
+  opacity: 1;
+}
+
+
+.tozihAks{
+  box-sizing: border-box;
+  width: 44px;
+  height: 44px;
+  /* width: 50px;
+  height: 50px;
+  border: 3px solid black; */
+  border-radius: 10px;
+  margin: 10px auto 10px auto;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.tozihCard p:nth-child(2){
+  display: flex;
+  width: 100%;
+  height: 30px;
+  justify-content: center;
+  align-items: center;
+  /* margin: 20px; */
+}
+
+.tozihCard p:nth-child(3){
+  display: flex;
+  width: 100%;
+  margin: 0;
+  padding: 0 10px 0 10px;
+  justify-content: baseline;
+  box-sizing: border-box;
+  direction: rtl;
+  /* background-color: red; */
+  font-size: 12px;
+  font-weight: bold;
+  /* height: 100%; */
+}
+
+.qu-container{
+  width: 500px;
+  margin: 0;
+  padding: 0;
+  opacity: 0;
+  transform: translateX(100px);
+  transition: 450ms;
+}
+
+.qu{
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 50px;
+  padding: 10px;
+  background-color: red;
+  justify-content: flex-end;
+  align-items: center;
+  overflow: hidden;
+  transition: 300ms;
+  font-weight: 500;
+}
+
+.qu:hover{
+  cursor: pointer;
+  background-color: rgb(1, 51, 97);
+}
+
+.arrow-icon{
+  position: absolute;
+  left: 10px;
+  display: flex;
+  height: 30%;
+  aspect-ratio: 1/1;
+  /* background-color: black; */
+  background-image: url("/photos/arrow.png");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* place-self:; */
+}
+
+.checker {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.checker:checked + .qu {
+  background-color: rgb(23, 54, 121);
+}
+
+.aqu {
+  width: 500px;
+  height: 0;
+  color: black;
+  background-color: white;
+  transition: 600ms;
+  overflow: hidden;
+  padding: 0px;
+  text-align: right;
+  box-sizing: border-box;
+  font-weight: bolder;
+}
+
+.qu-container .checker:checked ~ .aqu {
+  height: 120px;
+  padding: 10px;
+  transition: 600ms;
+}
+
+/* .qu-container .checker:checked ~ .arrow-icon{
+  transform: rotate(45deg);
+  background-color: red;
+} */
+/* ================footer================ */
+footer{
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 100px;
+  background-color: rgb(12, 18, 54);
+  justify-content: center;
+  align-items: center;
+  font-weight: bolder;
+}
+
+
+
+@media screen and (max-width:900px) {
+  .chatbox{
+    position: relative;
+    display: flex;
+    width: 80%;
+    max-width: 80%;
+    height: 80%;
+  }
+
+  .qu-container{
+    width: 80%;
+  }
+
+  .aqu{
+    width: 100%;
+  }
+}
