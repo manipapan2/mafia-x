@@ -3,9 +3,12 @@ import { Link } from 'react-router-dom'
 import './components.css'
 
 export default function Navigationbar(){
+  const [navmobiler, setNavmobiler] = useState(false)
   useEffect(() => {
     let links = document.querySelectorAll("nav a")
     let navdiv = document.getElementById("navdiv")
+
+
     
     links.forEach(element => {
       element.style.transform=`translateX(${navdiv.offsetWidth}px)`
@@ -23,10 +26,25 @@ export default function Navigationbar(){
     });
 
 
-  }, [])
+
+
+  },[])
+
+
+  const toggleMobileNav = () => {
+    const navmobilecontent = document.getElementById("navmobile-content");
+    if (!navmobiler) {
+      navmobilecontent.style.height = window.innerHeight - 70 + "px";
+      setNavmobiler(true);
+    } else {
+      navmobilecontent.style.height = "0px";
+      setNavmobiler(false);
+    }
+  };
+  
   
 
-  return(
+  return(<>
     <nav>
       <div id='navdiv'>
         <Link to="/aboutus">About Us</Link>
@@ -34,8 +52,19 @@ export default function Navigationbar(){
         <Link to="/game">Game</Link>
         <Link to="/">Home</Link>
       </div>
+
+      <div id='navmobile' className='navmobile' onClick={toggleMobileNav}>
+        <div className='khat'></div>
+      </div>
     </nav>
-  )
+
+    <div id='navmobile-content' className='navmobile-content'>
+        <Link to="/aboutus">About Us</Link>
+        <Link to="/roles">Roles</Link>
+        <Link to="/game">Game</Link>
+        <Link to="/">Home</Link>
+      </div>
+    </>)
 }
 
 
@@ -129,7 +158,7 @@ export function Qu(props) {
     <>
     <div className="qu-container">
       <input
-        type="radio"
+        type="checkbox"
         name="myRadio"
         id={props.id}
         className="checker"
