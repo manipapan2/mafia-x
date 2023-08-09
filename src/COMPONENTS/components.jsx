@@ -43,7 +43,9 @@ export default function Navigationbar(){
   const toggleMobileNav = () => {
     const navmobilecontent = document.getElementById("navmobile-content");
     const navmobileblur = document.getElementById("navmobile-blur");
+    const root = document.querySelector("#root")
     if (!navmobiler) {
+      root.style.overflow="hidden"
       navmobilecontent.style.right="0" 
       navmobileblur.style.display="flex"
       setTimeout(() => {
@@ -53,6 +55,7 @@ export default function Navigationbar(){
     } 
 
     else if (navmobiler && window.innerWidth <= 900) {
+      root.style.overflow="auto"
       navmobilecontent.style.right = '-60%';
       navmobileblur.style.opacity = '0';
       setTimeout(() => {
@@ -63,6 +66,7 @@ export default function Navigationbar(){
 
 
     else if (navmobiler) {
+      root.style.overflow="auto"
       navmobilecontent.style.right="-40%" 
       navmobileblur.style.opacity="0"
       setTimeout(() => {
@@ -79,7 +83,9 @@ export default function Navigationbar(){
   const toggleMobileNavBlur = () => {
     const navmobilecontent = document.getElementById("navmobile-content");
     const navmobileblur = document.getElementById("navmobile-blur");
+    const root = document.querySelector("#root")
     if (navmobiler && window.innerWidth <= 900) {
+      root.style.overflow="auto"
       navmobilecontent.style.right = '-60%';
       navmobileblur.style.opacity = '0';
       setTimeout(() => {
@@ -89,6 +95,7 @@ export default function Navigationbar(){
     }
     
     else if(navmobiler){
+      root.style.overflow="auto"
       navmobilecontent.style.right="-40%" 
       navmobileblur.style.opacity="0"
       setTimeout(() => {
