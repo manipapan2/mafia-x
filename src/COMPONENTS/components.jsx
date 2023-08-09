@@ -7,6 +7,8 @@ export default function Navigationbar(){
   useEffect(() => {
     let links = document.querySelectorAll("nav a")
     let navdiv = document.getElementById("navdiv")
+    // const navmobilecontent = document.getElementById("navmobile-content");
+    // const navmobileblur = document.getElementById("navmobile-blur");
 
 
     
@@ -26,31 +28,60 @@ export default function Navigationbar(){
     });
 
 
-
+    // navmobilecontent.style.height=window.innerHeight - 70 + "px";
+    // navmobileblur.style.height=window.innerHeight - 70 + "px";
+    // setTimeout(() => {
+    //   navmobilecontent.style.transition="500ms"
+    // }, 100);
+    // setTimeout(() => {
+    //   navmobileblur.style.transition="500ms"
+    // }, 100);
 
   },[])
 
 
   const toggleMobileNav = () => {
     const navmobilecontent = document.getElementById("navmobile-content");
+    const navmobileblur = document.getElementById("navmobile-blur");
     if (!navmobiler) {
-      navmobilecontent.style.height = window.innerHeight - 70 + "px";
+      navmobilecontent.style.right="0" 
+      navmobileblur.style.display="flex"
+      setTimeout(() => {
+        navmobileblur.style.opacity="1"
+      }, 1);
       setNavmobiler(true);
     } else {
-      navmobilecontent.style.height = "0px";
+      navmobilecontent.style.right="-40%" 
+      navmobileblur.style.opacity="0"
+      setTimeout(() => {
+        navmobileblur.style.display="none"
+      }, 500);
       setNavmobiler(false);
     }
   };
+
+  const toggleMobileNavBlur = () => {
+    const navmobilecontent = document.getElementById("navmobile-content");
+    const navmobileblur = document.getElementById("navmobile-blur");
+    if(navmobiler){
+      navmobilecontent.style.right="-40%" 
+      navmobileblur.style.opacity="0"
+      setTimeout(() => {
+        navmobileblur.style.display="none"
+      }, 500);
+      setNavmobiler(false);
+    }
+  }
   
   
 
   return(<>
     <nav>
       <div id='navdiv'>
-        <Link to="/aboutus">About Us</Link>
-        <Link to="/roles">Roles</Link>
-        <Link to="/game">Game</Link>
-        <Link to="/">Home</Link>
+        <Link to="#">About Us</Link>
+        <Link to="#">Roles</Link>
+        <Link to="#">Game</Link>
+        <Link to="#">Home</Link>
       </div>
 
       <div id='navmobile' className='navmobile' onClick={toggleMobileNav}>
@@ -59,11 +90,16 @@ export default function Navigationbar(){
     </nav>
 
     <div id='navmobile-content' className='navmobile-content'>
-        <Link to="/aboutus">About Us</Link>
-        <Link to="/roles">Roles</Link>
-        <Link to="/game">Game</Link>
-        <Link to="/">Home</Link>
-      </div>
+        <div id='navmobile' className='navmobile2' onClick={toggleMobileNav}>
+            <div className='khat2'></div>
+        </div>
+        <Link to="#">About Us</Link>
+        <Link to="#">Roles</Link>
+        <Link to="#">Game</Link>
+        <Link to="#">Home</Link>
+    </div>
+
+    <div className='navmobile-blur' id='navmobile-blur' onClick={toggleMobileNavBlur}></div>
     </>)
 }
 
@@ -179,7 +215,7 @@ export function Footer(){
     return(
         <>
             <footer>
-              <p>electrotm.org ایده برداری شده از وبسایت</p>
+              <p><span><Link to="https://electrotm.org" target='_blank'>electrotm.org</Link></span> ایده برداری شده از وبسایت</p>
             </footer>
         </>
     )

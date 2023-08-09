@@ -49,8 +49,19 @@ export default function Home(){
 
             // console.log(event.clientX/window.innerHeight)
           };
+
+          const cardListener = () => {
+            if(window.innerWidth > 900){
+              ezafTozih.addEventListener("mousemove", handleMouseMove);
+            }
+            else{
+              ezafTozih.removeEventListener("mousemove", handleMouseMove);
+            }
+          }
       
-          ezafTozih.addEventListener("mousemove", handleMouseMove);
+          window.addEventListener("resize", cardListener)
+
+          cardListener()
             
     })
 

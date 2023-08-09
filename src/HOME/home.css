@@ -155,7 +155,7 @@
     background-color: red;
     outline: 2px solid white;
     border-radius: 15px;
-    transform: perspective(500px) rotateX(5deg) rotateY(30deg)
+    transform: perspective(700px) rotateX(5deg) rotateY(30deg)
 }
 
 .aksezfe::after{
