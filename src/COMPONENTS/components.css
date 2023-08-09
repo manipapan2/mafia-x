@@ -420,6 +420,10 @@ nav{
       display: flex;
     }
 
+    .navmobile-content{
+      width: 60%;
+    }
+
     .chatbox{
       position: relative;
       display: flex;
