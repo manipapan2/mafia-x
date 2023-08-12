@@ -36,7 +36,6 @@ export default function Home(){
 
           // }
           console.log(ezafeheight)
-          console.log("ehem :" + event.clientX)
           // console.log((event.clientY/ezafeheight[0])*30)
             // if(event.clientX >= 30){
             // aksezafe.style.transform = `perspective(500px) rotateX(5deg) rotateY(30deg)`;
@@ -74,7 +73,7 @@ export default function Home(){
                 <div className='neveshtehandler'>
                     <p className='neveshte'>چرا مافیا ایکس؟</p>
                     <p className='neveshte'>درک هدف کلی: همان طور که اشاره کردیم هدف دانشگاه یا کارفرما بررسی این نکته است که شما نحوی سازماندهی افکارتان چگونه است، این که چگونه می توانید مطابق به انتظارات به نگارش متنی بپردازید که در عین حال توانایی های شما را هم بیان کند. قطعا در نگارش با اهداف آکادمیک اهداف تحصیلی مدنظر و در نگارش برای موقعیت شغلی تمرکز بر نحوه ارائه مهارت ها می باشد.</p>
-                    <button className="playButton" id='playButton'><Link to={"/a"} className='game-link'>بازی</Link></button>
+                    <button className="playButton" id='playButton'><Link to={"#"} className='game-link'>بازی</Link></button>
                 </div>
 
                 </div>

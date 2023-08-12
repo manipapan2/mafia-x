@@ -398,16 +398,34 @@ nav{
     background-color: red;
   } */
   /* ================footer================ */
-  footer{
-    display: flex;
-    position: relative;
-    width: 100%;
-    height: 100px;
-    background-color: rgb(12, 18, 54);
-    justify-content: center;
-    align-items: center;
-    font-weight: bolder;
-  }
+footer{
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  /* height: 100px; */
+  background-color: rgb(12, 18, 54);
+  justify-content: center;
+  align-items: center;
+  font-weight: bolder;
+}
+
+footer p{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.copyaks{
+  display: flex;
+  width: 50px;
+  height: 50px;
+  margin: 0;
+  /* background-image: url("/photos/mafiapic1.png"); */
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
   
   
   

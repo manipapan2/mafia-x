@@ -46,6 +46,7 @@ export default function Navigationbar(){
     const root = document.querySelector("#root")
     if (!navmobiler) {
       root.style.overflow="hidden"
+      // window.
       navmobilecontent.style.right="0" 
       navmobileblur.style.display="flex"
       setTimeout(() => {
@@ -55,7 +56,8 @@ export default function Navigationbar(){
     } 
 
     else if (navmobiler && window.innerWidth <= 900) {
-      root.style.overflow="auto"
+      root.style.overflowX="hidden"
+      root.style.overflowY="auto"
       navmobilecontent.style.right = '-60%';
       navmobileblur.style.opacity = '0';
       setTimeout(() => {
@@ -247,7 +249,9 @@ export function Footer(){
     return(
         <>
             <footer>
-              <p><span><Link to="https://electrotm.org" target='_blank'>electrotm.org</Link></span> ایده برداری شده از وبسایت</p>
+              <p><span><Link to="https://electrotm.org" target='_blank' style={{color:"#e6053d",marginRight:"6px"}}>electrotm.org</Link></span> ایده برداری شده از وبسایت</p>
+              <p>This Photo <span className='copyaks' style={{backgroundImage:'url("/photos/mafiapic1.png")'}}></span> Is Designed By <span><Link to="https://freepic.com" style={{color:"#e6053d",marginLeft:"6px"}} target='_blank'>freepic.com</Link></span></p>
+              <p>These Photos <span className='copyaks' style={{backgroundImage:'url("/photos/boxing-gloves.png")'}}></span><span className='copyaks' style={{backgroundImage:'url("/photos/gun.png")'}}></span><span className='copyaks' style={{backgroundImage:'url("/photos/add-friend.png")'}}></span><span className='copyaks' style={{backgroundImage:'url("/photos/adamak.png")'}}></span> are Designed By<span><Link to="https://flaticon.com" style={{color:"#e6053d",marginLeft:"6px"}} target='_blank'>flaticon.com</Link></span></p>
             </footer>
         </>
     )
