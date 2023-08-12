@@ -56,11 +56,11 @@ export default function Navigationbar(){
     } 
 
     else if (navmobiler && window.innerWidth <= 900) {
-      root.style.overflowX="hidden"
       root.scrollTo({
         top: 0,
         behavior: 'smooth'
       });
+      root.style.overflowX="hidden"
       root.style.overflowY="auto"
       navmobilecontent.style.right = '-60%';
       navmobileblur.style.opacity = '0';
