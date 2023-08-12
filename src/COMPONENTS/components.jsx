@@ -57,7 +57,7 @@ export default function Navigationbar(){
 
     else if (navmobiler && window.innerWidth <= 900) {
       root.style.overflowX="hidden"
-      window.scrollTo({
+      root.scrollTo({
         top: 0,
         behavior: 'smooth'
       });
