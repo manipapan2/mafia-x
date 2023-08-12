@@ -57,6 +57,10 @@ export default function Navigationbar(){
 
     else if (navmobiler && window.innerWidth <= 900) {
       root.style.overflowX="hidden"
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
       root.style.overflowY="auto"
       navmobilecontent.style.right = '-60%';
       navmobileblur.style.opacity = '0';
@@ -127,10 +131,10 @@ export default function Navigationbar(){
         <div id='navmobile' className='navmobile2' onClick={toggleMobileNav}>
             <div className='khat2'></div>
         </div>
-        <Link to="#">About Us</Link>
-        <Link to="#">Roles</Link>
-        <Link to="#">Game</Link>
         <Link to="#">Home</Link>
+        <Link to="#">Game</Link>
+        <Link to="#">Roles</Link>
+        <Link to="#">About Us</Link>
     </div>
 
     <div className='navmobile-blur' id='navmobile-blur' onClick={toggleMobileNavBlur}></div>
